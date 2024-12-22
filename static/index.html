@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Static website</title>
+  </head>
+  <body>
+    <h2>Helloo</h2>
+  </body>
+  <script>
+    wSocket = new WebSocket("ws://localhost:8080/echo");
+
+    wSocket.onmessage = function (evt) {
+      document.location.reload();
+    };
+
+    wSocket.onerror = function (evt) {
+      alert(evt);
+    };
+  </script>
+</html>
